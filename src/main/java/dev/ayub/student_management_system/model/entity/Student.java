@@ -1,6 +1,7 @@
 package dev.ayub.student_management_system.model.entity;
 
 import dev.ayub.student_management_system.model.enums.definaton.GenderEnum;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,8 @@ import jakarta.persistence.*;
 
 @Entity
 @Data
-//@NoArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Table(name = "students")
 public class Student {
