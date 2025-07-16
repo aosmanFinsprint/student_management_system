@@ -42,7 +42,7 @@ public class WebSecurity implements WebMvcConfigurer {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(
-                                "/api/**"
+                                "/api/v1/**"
                         ).permitAll()
                         // User-specific endpoints
                 );
