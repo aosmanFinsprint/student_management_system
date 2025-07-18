@@ -19,7 +19,7 @@ public class StudentController {
     // Create a new student
     @PostMapping
     public Student createStudent(@RequestBody Student student) {  // n
-        return studentRepository.save(student); //
+        return studentRepository.save(student); //@Column(name = "")
     }
 
     // Get all students
