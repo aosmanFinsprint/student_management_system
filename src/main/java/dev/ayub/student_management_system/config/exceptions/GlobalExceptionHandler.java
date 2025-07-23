@@ -1,4 +1,4 @@
-package dev.ayub.student_management_system.exceptions;
+package dev.ayub.student_management_system.config.exceptions;
 
 
 import org.springframework.http.HttpStatus;
