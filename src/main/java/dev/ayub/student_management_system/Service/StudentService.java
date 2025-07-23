@@ -1,7 +1,7 @@
 package dev.ayub.student_management_system.Service;
 
-import dev.ayub.student_management_system.dto.Request.CreateStudentRequestDTO;
-import dev.ayub.student_management_system.dto.Response.CreateStudentResponseDTO;
+import dev.ayub.student_management_system.model.dto.Request.CreateStudentRequestDTO;
+import dev.ayub.student_management_system.model.dto.Response.CreateStudentResponseDTO;
 import dev.ayub.student_management_system.model.entity.Student;
 import dev.ayub.student_management_system.repository.StudentRepository;
 import org.springframework.stereotype.Service;

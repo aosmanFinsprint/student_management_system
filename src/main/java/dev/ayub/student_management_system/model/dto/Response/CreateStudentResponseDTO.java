@@ -1,4 +1,4 @@
-package dev.ayub.student_management_system.dto.Response;
+package dev.ayub.student_management_system.model.dto.Response;
 
 import dev.ayub.student_management_system.model.enums.definaton.GenderEnum;
 import lombok.Builder;

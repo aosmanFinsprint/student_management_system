@@ -1,8 +1,11 @@
 package dev.ayub.student_management_system.controller;
 
+import dev.ayub.student_management_system.Service.StudentService;
+import dev.ayub.student_management_system.model.dto.Request.CreateStudentRequestDTO;
 import dev.ayub.student_management_system.model.entity.Student;
 import dev.ayub.student_management_system.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,13 +16,18 @@ import java.util.Optional;
 @RequestMapping("/api/v1/students")  //
 public class StudentController {
 
-    @Autowired
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
+    private final StudentService studentService;
+
+    public StudentController(StudentService studentService, StudentRepository studentRepository) {
+        this.studentService = studentService;
+        this.studentRepository = studentRepository;
+    }
 
     // Create a new student
     @PostMapping
-    public Student createStudent(@RequestBody Student student) {  // n
-        return studentRepository.save(student); //@Column(name = "")
+    public ResponseEntity<?> createStudent(@Valid @RequestBody CreateStudentRequestDTO requestDTO) {
+        return ResponseEntity.ok(studentService.createStudent(requestDTO));
     }
 
     // Get all students
