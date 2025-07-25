@@ -22,4 +22,3 @@ public class LoginResponseDTO {
     private String refreshToken;
     private Long expiresIn;
 }
-

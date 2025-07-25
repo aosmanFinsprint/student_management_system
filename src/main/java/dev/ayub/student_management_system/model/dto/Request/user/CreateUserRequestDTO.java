@@ -1,7 +1,9 @@
 package dev.ayub.student_management_system.model.dto.Request.user;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -37,8 +39,11 @@ public class CreateUserRequestDTO {
     @JsonProperty("phoneNumber")
     public String phoneNumber;
 
-    @NotNull(message = "Age is required")
-    private Integer age;
+    @JsonBackReference
+    @Column(name = "password")
+    private String password;
+
+
 
 }
 

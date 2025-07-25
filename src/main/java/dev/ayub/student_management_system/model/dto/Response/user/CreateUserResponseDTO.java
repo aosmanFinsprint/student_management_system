@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
 import lombok.*;
 
+import java.time.Instant;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,8 +20,8 @@ public class CreateUserResponseDTO {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String createdAt;
-    private String updatedAt;
+    private Instant createdAt;
+    private Instant updatedAt;
     private StatusEnum status;
 }
 
