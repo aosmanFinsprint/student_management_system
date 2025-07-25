@@ -3,6 +3,7 @@ package dev.ayub.student_management_system.controller.user;
 import dev.ayub.student_management_system.Service.user.UserService;
 import dev.ayub.student_management_system.config.Utils.ApiResponseUtil;
 import dev.ayub.student_management_system.model.dto.Request.user.CreateUserRequestDTO;
+import dev.ayub.student_management_system.model.dto.Request.user.UserUpdateRequestDTO;
 import dev.ayub.student_management_system.model.dto.Response.user.CreateUserResponseDTO;
 import dev.ayub.student_management_system.model.dto.SuccessResponseDTO;
 import dev.ayub.student_management_system.model.entity.User;
@@ -27,18 +28,6 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/profile")
-    public ResponseEntity<SuccessResponseDTO<CreateUserResponseDTO>> getProfile(Principal principal) {
-        User user = userRepository.findUserByEmail(principal.getName());
-        CreateUserResponseDTO u =  userService.getUserProfile(user);
-        return ApiResponseUtil.success(u, "User Profile fetched successfully!");
-    }
-
-
-
-
-
-
 
     @PostMapping("/create")
     public ResponseEntity<SuccessResponseDTO<CreateUserResponseDTO>> createUser(@RequestBody CreateUserRequestDTO requestDTO) {
@@ -46,15 +35,20 @@ public class UserController {
         return ApiResponseUtil.success(createdUser, "User created successfully!");
     }
 
-    @PostMapping("/set-password")
-    public ResponseEntity<SuccessResponseDTO<String>> setPassword(@RequestParam String token, @RequestParam String newPassword) {
-        userService.setPassword(token, newPassword);
-        return ApiResponseUtil.success(null, "Password set successfully!");
+    @PutMapping
+    public ResponseEntity<CreateUserResponseDTO> updateUser(@RequestBody UserUpdateRequestDTO requestDTO) {
+        return ResponseEntity.ok(userService.updateUser(requestDTO));
     }
 
-    @PostMapping("/forgot-password")
-    public ResponseEntity<SuccessResponseDTO<String>> forgotPassword(@RequestParam String email) {
-        userService.forgotPassword(email);
-        return ApiResponseUtil.success(null, "Password reset instructions sent to your email!");
-    }
+//    @PostMapping("/set-password")
+//    public ResponseEntity<SuccessResponseDTO<String>> setPassword(@RequestParam String token, @RequestParam String newPassword) {
+//        userService.setPassword(token, newPassword);
+//        return ApiResponseUtil.success(null, "Password set successfully!");
+//    }
+//
+//    @PostMapping("/forgot-password")
+//    public ResponseEntity<SuccessResponseDTO<String>> forgotPassword(@RequestParam String email) {
+//        userService.forgotPassword(email);
+//        return ApiResponseUtil.success(null, "Password reset instructions sent to your email!");
+//    }
 }

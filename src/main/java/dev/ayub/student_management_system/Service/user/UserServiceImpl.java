@@ -1,10 +1,8 @@
 package dev.ayub.student_management_system.Service.user;
 
 import dev.ayub.student_management_system.config.exceptions.UserNotFoundException;
-import dev.ayub.student_management_system.model.dto.Request.CreateStudentRequestDTO;
 import dev.ayub.student_management_system.model.dto.Request.user.CreateUserRequestDTO;
 import dev.ayub.student_management_system.model.dto.Request.user.UserUpdateRequestDTO;
-import dev.ayub.student_management_system.model.dto.Response.CreateStudentResponseDTO;
 import dev.ayub.student_management_system.model.dto.Response.user.CreateUserResponseDTO;
 import dev.ayub.student_management_system.model.entity.User;
 import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
@@ -57,6 +55,7 @@ public  class UserServiceImpl implements UserService {
 
     }
 
+    @Override
     public CreateUserResponseDTO updateUser(UserUpdateRequestDTO requestDTO) {
         Optional<User> existingUser = userRepository.findByEmail(requestDTO.getEmail());
 
