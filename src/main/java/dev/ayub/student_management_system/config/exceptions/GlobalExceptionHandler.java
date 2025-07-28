@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
             errors.put(fieldName, message);
         });
 
-        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST); // HTTP 400
+        return new ResponseEntity<>(errors, HttpStatus.NOT_FOUND); // HTTP 404
     }
 
 
