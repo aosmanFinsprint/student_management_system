@@ -1,7 +1,7 @@
 package dev.ayub.student_management_system.model.enums.converters;
 
 
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

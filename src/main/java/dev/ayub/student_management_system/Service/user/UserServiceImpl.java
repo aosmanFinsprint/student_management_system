@@ -5,7 +5,7 @@ import dev.ayub.student_management_system.model.dto.Request.user.CreateUserReque
 import dev.ayub.student_management_system.model.dto.Request.user.UserUpdateRequestDTO;
 import dev.ayub.student_management_system.model.dto.Response.user.CreateUserResponseDTO;
 import dev.ayub.student_management_system.model.entity.User;
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import dev.ayub.student_management_system.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

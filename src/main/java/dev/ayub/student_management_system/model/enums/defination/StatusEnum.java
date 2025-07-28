@@ -1,4 +1,4 @@
-package dev.ayub.student_management_system.model.enums.definaton;
+package dev.ayub.student_management_system.model.enums.defination;
 
 
 import java.util.Arrays;

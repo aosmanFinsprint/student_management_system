@@ -1,11 +1,10 @@
 package dev.ayub.student_management_system.model.dto.Response.user;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import lombok.*;
 
 import java.time.Instant;
-import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter

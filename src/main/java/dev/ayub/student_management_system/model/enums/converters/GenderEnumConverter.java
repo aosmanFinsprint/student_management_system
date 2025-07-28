@@ -1,6 +1,6 @@
 package dev.ayub.student_management_system.model.enums.converters;
 
-import dev.ayub.student_management_system.model.enums.definaton.GenderEnum;
+import dev.ayub.student_management_system.model.enums.defination.GenderEnum;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

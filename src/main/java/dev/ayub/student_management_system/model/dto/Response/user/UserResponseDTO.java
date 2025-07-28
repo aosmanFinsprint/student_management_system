@@ -1,12 +1,10 @@
 package dev.ayub.student_management_system.model.dto.Response.user;
 
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
 
 @Data
 @Builder

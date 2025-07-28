@@ -1,6 +1,6 @@
 package dev.ayub.student_management_system.repository;
 
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

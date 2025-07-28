@@ -2,13 +2,11 @@ package dev.ayub.student_management_system.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import dev.ayub.student_management_system.model.enums.converters.StatusEnumConverter;
-import dev.ayub.student_management_system.model.enums.definaton.StatusEnum;
+import dev.ayub.student_management_system.model.enums.defination.StatusEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter

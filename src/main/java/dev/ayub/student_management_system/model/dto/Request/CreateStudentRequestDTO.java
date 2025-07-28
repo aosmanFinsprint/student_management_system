@@ -1,6 +1,6 @@
 package dev.ayub.student_management_system.model.dto.Request;
 
-import dev.ayub.student_management_system.model.enums.definaton.GenderEnum;
+import dev.ayub.student_management_system.model.enums.defination.GenderEnum;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
