@@ -1,56 +1,46 @@
 package dev.ayub.student_management_system.config.Securty;
 
 
-
+import dev.ayub.student_management_system.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import dev.ayub.student_management_system.model.entity.User;
-import java.util.ArrayList;
+
 import java.util.Collection;
-import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
 
-    private final User userDetails;
+    private final User user;
 
     public UserDetails(User user) {
-        super();
-        this.userDetails = user;
+        this.user = user;
     }
 
     public User getUser() {
-        return this.userDetails;
+        return this.user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.userDetails == null) {
-            return new ArrayList<>();
-        }
-
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-
-        // If no roles/permissions found, add default ROLE_USER
-        if (authorities.isEmpty()) {
-            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        }
-
-        return authorities;
+        return user.getRoles().stream()
+                .flatMap(role -> role.getPermissions().stream())
+                .map(permission -> new SimpleGrantedAuthority(permission.getName()))
+                .collect(Collectors.toSet());
     }
 
     @Override
     public String getPassword() {
-        return userDetails.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return userDetails.getEmail();
+        return user.getEmail(); // or phone if that’s your login
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return true; // or add logic if you want
     }
 
     @Override
@@ -65,6 +55,7 @@ public class UserDetails implements org.springframework.security.core.userdetail
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return true; // or user.getStatus() == ACTIVE
     }
 }
+
