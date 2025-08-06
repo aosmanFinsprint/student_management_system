@@ -1,4 +1,4 @@
-package dev.ayub.student_management_system.Service;
+package dev.ayub.student_management_system.service;
 
 import dev.ayub.student_management_system.model.dto.Request.CreateStudentRequestDTO;
 import dev.ayub.student_management_system.model.dto.Response.CreateStudentResponseDTO;

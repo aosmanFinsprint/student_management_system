@@ -1,4 +1,4 @@
-package dev.ayub.student_management_system.Service.user;
+package dev.ayub.student_management_system.service.user;
 
 import dev.ayub.student_management_system.config.exceptions.UserNotFoundException;
 import dev.ayub.student_management_system.model.dto.Request.user.CreateUserRequestDTO;
@@ -90,6 +90,7 @@ public  class UserServiceImpl implements UserService {
                 .updatedAt(updatedUser.getUpdatedAt())
                 .build();
     }
+
 
 
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -46,9 +47,18 @@ public class User extends BaseEntity {
     @Column(name = "reset_token_expiry_date")
     private LocalDateTime resetTokenExpiryDate;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
 
 
     public String getFullName() {
         return firstName+" "+lastName;
     }
+
+
 }

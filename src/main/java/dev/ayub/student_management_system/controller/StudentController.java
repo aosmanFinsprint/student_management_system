@@ -1,6 +1,6 @@
 package dev.ayub.student_management_system.controller;
 
-import dev.ayub.student_management_system.Service.StudentService;
+import dev.ayub.student_management_system.service.StudentService;
 import dev.ayub.student_management_system.model.dto.Request.CreateStudentRequestDTO;
 import dev.ayub.student_management_system.model.entity.Student;
 import dev.ayub.student_management_system.repository.StudentRepository;
